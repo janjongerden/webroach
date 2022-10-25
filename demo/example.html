@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Roaches test page</title>
+    <script src="../roaches.js"></script>
+    <script>
+        function addBoxes() {
+            for (var i = 0; i < 50; i++) {
+                const box = document.createElement("img");
+
+                box.className = 'box';
+                box.src = "box.png";
+
+                document.body.appendChild(box);
+            }
+        }
+
+        window.onload = () => {
+            addBoxes();
+            roachesAreGo(8);
+        };
+    </script>
+    <style>
+        body {
+            background: lightgrey;
+        }
+        .box {
+            margin: 50px;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<h1>Webroach test page</h1>
+<br />
+</body>
+</html>
