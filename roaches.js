@@ -41,7 +41,6 @@ class Roach {
                 if (roachBehindImage(this.element, image)) {
                     hidden = true;
                     this.stoppedMoving = true;
-                    console.log("I'm save! Says " + this.name);
                 }
             }
         );
