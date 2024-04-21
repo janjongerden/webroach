@@ -21,13 +21,12 @@ function roachBehindImage(roach, image) {
 }
 
 class Roach {
-    constructor(name) {
+    constructor(name, speed) {
         this.name = name;
         this.dir = getRandomInt(24) * 15;
         this.x = getRandomInt(window.innerWidth);
         this.y = getRandomInt(window.innerHeight);
-        this.speed = 20;
-        this.stoppedMoving = false;
+        this.speed = speed;
 
         this.element = document.createElement("img");
         this.element.style="position:absolute; z-index:-1000;";
@@ -40,7 +39,6 @@ class Roach {
         document.querySelectorAll('img').forEach(image => {
                 if (roachBehindImage(this.element, image)) {
                     hidden = true;
-                    this.stoppedMoving = true;
                 }
             }
         );
@@ -90,10 +88,10 @@ class Roach {
     }
 }
 
-function roachesAreGo(roachCount) {
+function roachesAreGo(roachCount, speed = 20) {
     this.roaches = new Set();
     for (var i = 0; i < roachCount; i++) {
-        this.roaches.add(new Roach("roach #" + i));
+        this.roaches.add(new Roach("roach #" + i, speed));
     }
     const interval = setInterval(function() {
         this.roaches.forEach((roach) => {

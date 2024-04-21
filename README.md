@@ -18,7 +18,8 @@ following lines to the `<head>` section of your page:
     </script>
 ```
 
-The parameter of `roachesAreGo()` is the number of roaches to add to the page.
+The first parameter of `roachesAreGo()` is the number of roaches to add to the page. 
+An optional second parameter controls the speed of the roaches, the default is **20**.
 
 ## Demo
 
